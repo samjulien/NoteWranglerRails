@@ -1,0 +1,5 @@
+== NoteWranglerRails
+
+This is a refactor of Codeschool's NoteWrangler app to use Rails instead of Express. The front end will still be the same.
+
+Just run `rake db:setup` to get started.
