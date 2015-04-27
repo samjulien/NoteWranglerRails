@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="NoteWrangler">
 <head>
   <title>NoteWranglerRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                  <a href="/#/">NoteWrangler</a>
+                </div>
+            </div>
+            <nw-page-nav></nw-page-nav>
+        </div>
+    </nav>
+    
+    <div class="main-wrapper">
+        <%= yield %>
+    </div>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('NoteWrangler', ['ngRoute', 'ngResource', 'ngGravatar'])
+angular.module('NoteWrangler', ['ngRoute', 'templates', 'ngResource', 'ngGravatar'])
 	.config(function(GravatarProvider){
 		GravatarProvider.setSize(50);
 	});
