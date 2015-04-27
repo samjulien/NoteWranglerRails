@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.destroy_all
 Note.destroy_all
+Category.destroy_all
 
 jeff = User.create!(
     name: 'Jeffery Zeldman',
@@ -23,26 +24,36 @@ gregg = User.create!(
     email: 'gregg@codeschool.com'
 )
 
+testing = Category.create!(name: 'Testing')
+personal = Category.create!(name: 'Personal Note')
+bash = Category.create!(name: 'Bash')
+idea = Category.create!(name: 'Idea')
+caution = Category.create!(name: 'Use with Caution')
+question = Category.create!(name: 'Question')
+
 Note.create!([
   {
     title: 'Test',
     description: 'This is a test.',
     link: 'http://www.twitter.com',
     content: 'This is a test of the content.',
-    user: jeff
+    user: jeff,
+    category: testing
   },
   {
     title: 'Test Too',
     description: 'This is a test too.',
     link: 'http://www.google.com',
     content: 'This is a test of the content too.',
-    user: gregg
+    user: gregg,
+    category: question
   },
   {
     title: 'Test Three',
     description: 'This is a test three.',
     link: 'http://www.google.com',
     content: 'This is a test of the content three.',
-    user: gregg
+    user: gregg,
+    category: caution
   }
 ])

@@ -38,7 +38,8 @@ module Api
     private
 
     def note_params
-      params.require(:note).permit(:title, :description, :link, :icon, :content)
+      params.require(:note).permit(:title, 
+        :description, :link, :icon, :content, :user_id, :category_id)
     end
   end
 end
