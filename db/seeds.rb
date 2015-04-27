@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Note.destroy_all
+
 Note.create!([
   {
     id: 1,
@@ -19,5 +21,12 @@ Note.create!([
     description: 'This is a test too.',
     link: 'http://www.google.com',
     content: 'This is a test of the content too.'
+  },
+  {
+    id: 3,
+    title: 'Test Three',
+    description: 'This is a test three.',
+    link: 'http://www.google.com',
+    content: 'This is a test of the content three.'
   }
 ])
