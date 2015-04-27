@@ -14,7 +14,7 @@ module Api
     def create
       note = Note.new(note_params)
       if note.save
-        render json: note, status: 200
+        render json: note, status: 201, location: [:api, note]
       else
         render json: note.errors, status: 422
       end
@@ -27,9 +27,12 @@ module Api
     end
 
     def update
-      note = Note.find(book_params[:id])
-      note.update(book_params)
-      render json: note, status: 200, location: [:api, note]
+      note = Note.find(params[:id])
+      if note.update!(note_params)
+        render json: note, status: 200, location: [:api, note]
+      else
+        render json: note.errors, status: 422
+      end
     end
 
     private
